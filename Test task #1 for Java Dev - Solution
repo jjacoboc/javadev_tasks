@@ -1,0 +1,32 @@
+Task #1 description
+
+We have in PostgreSQL tables like this:
+
+auth_tokens table:
+id BIGINT;
+userid INT;
+deviceid VARCHAR(255);
+pushtoken VARCHAR(255);
+devide_platform SMALLINT;
+
+users table:
+id BIGINT;
+firstname VARCHAR(100);
+
+device_platforms table:
+id SMALLINT;
+name VARCHAR(100);
+
+User table has about 100 000 users, every user can have more than one device, so auth_tokens table will have size more than 100 000 rows as well.
+
+Marketing team wants to send pushes to all users with ‘some text’. And they want to do it several times a week by some scheduled timetable. So for example send on Monday at 09:00am pushes with text ‘hello world’, on Tuesday 6:00pm ‘hello, how are you?’ etc. Max count of scheduled tasks will not be more than 10.
+
+What we need from developer: please describe how to solve this task, we need detailed explanation of the flow + describing all technologies, frameworks and tools you prefer use to solve this task.
+
+Feel free to contact our HR or other guys you have contacts with.
+
+
+Solution:
+First of all, as I have strong skills with Hibernate framework, Spring framework and JSF framework (primefaces), I would choose these frameworks for the software architecture. 
+I would configure all these frameworks to work together. Then, I would map all tables from database and create layers for presentation, business and persistence. After that, I need a form to save all data input about the pushes we want to send as a schedule event. Then we can use Threats to configure all pushes that we want to create, also we can use NiconNotifyOSD, which it is a library for notifications and messaging service for java.
+With all this framworks we can easily create an application with all the requirements that marketing team want.
