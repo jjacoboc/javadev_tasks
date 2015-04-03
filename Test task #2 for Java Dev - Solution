@@ -1,0 +1,21 @@
+Task #2 description
+
+Install OpenFire and it’s plugin named ‘Open Archive’ - https://maven.reucon.com/projects/public/archive/.
+
+What we need is creating plugin that will store all message history to database with custom fields like ‘itemId’. We using extended messages with some extra fields, and we need to save all message data to DB as well, not only body.
+
+So the task is to investigate ‘Open Archive’ plugin and describe how to solve the task about saving history of all messages.
+
+Contact our HR George or any person who talked to you about any questions you have.
+
+Thanks, Sellit team.
+
+Answer:
+
+After install OpenFire and Open Archive plugin, I need to enabled configuration to archive and index messages on the server.
+Then for the requirement, we need to create a plugin on XMPP server	to archive messages and, for that, we can use Smack API. This api allow us to get messages from open fire and store them to a DB and also retrieve those messages and show them.
+Another way to do this requirement is to install the Monitoring Message plugin that creates additional basic tables for messages and allow us to save those messages that we can retrieve later. 
+Both are good options. Using Smack Api we can do it with our own database and using Monitoring plugin we will use basic tables created by this plugin. I clear that using Smack Api the implementation will be more complicated than using the Monitoring plugin.
+Based on the requirements we can say that best fits our need is Smack Api.
+
+
